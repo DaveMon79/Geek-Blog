@@ -1,3 +1,4 @@
+/* General page styling */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,13 +8,14 @@
 
 }
 
-
+/* Height and backgroubd colour for header */
 header {
     min-height: fit-content;
     background-color: rgb(125, 86, 162);
 }
 
 
+/* Styling for navigation options at top of page */
 .header-options {
     display: flex;
     justify-content: left;
@@ -22,11 +24,13 @@ header {
     padding: 1vh;
 }
 
+/* Font colour for navigation options */
 .header-options h3 {
     color: whitesmoke;
     margin-left: 20px
 }
 
+/* Displays header divs as flex */
 .header-title {
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +38,9 @@ header {
     margin: auto;
     padding: 3vh 6vh 3vh 6vh;
 
-} 
+}
 
+/* Header font styling */
 header h1 {
     font-size: 11vh;
     color: whitesmoke;
@@ -44,6 +49,12 @@ header h1 {
     text-shadow: 2px 2px 4px black;
 }
 
+/* Border radious for header image */
+img {
+    border-radius: 5px;
+}
+
+/* Styles the stored user blogs */
 .user-post {
     width: 90%;
     margin-top: 2vh;
@@ -54,6 +65,7 @@ header h1 {
 }
 
 
+/* Font styling for previous blogs */
 .post-header {
     background-color: rgb(78, 69, 69);
     color: whitesmoke;
@@ -65,6 +77,7 @@ header h1 {
 
 }
 
+/* Font styling for previous blogs */
 .post-text {
     color: rgb(78, 69, 69);
     padding: 2vh;
@@ -73,6 +86,7 @@ header h1 {
 
 }
 
+/* Styling for sign up section */
 .sign-up {
     margin-left: 30%;
     width: 40%;
@@ -82,37 +96,158 @@ header h1 {
 
 }
 
+/* Styling for header of sign up section */
 .sign-up-title {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color:  rgb(78, 69, 69);
+    background-color: rgb(78, 69, 69);
     color: whitesmoke;
     border-radius: 10px 10px 0 0;
     padding: 2vh 0 2vh 0;
 
 }
 
+/* Centres user input boxes */
 .sign-up-input {
-      text-align: -webkit-center;
-      padding-bottom: 2vh;
- 
+    text-align: -webkit-center;
+    padding-bottom: 2vh;
+
 }
 
+/* Styles user input boxes */
 .sign-up-input input {
     display: block;
     margin-top: 2vh;
     height: 5vh;
-    width: 50vh;
+    width: 60%;
     border-radius: 5px;
-    
+    padding-left: 2vh;
+
 
 }
 
-.sign-up-input button  {
+/* Styles sign up button */
+.sign-up-input button {
     margin-top: 2vh;
-    background-color:  rgb(78, 69, 69) ;
+    background-color: rgb(78, 69, 69);
     color: whitesmoke;
     border-radius: 5px;
     padding: 1vh;
+}
+
+/* Size for create a blog section */
+.blog {
+    width: 50%;
+    margin: 10vh 0 0 25%;
+}
+
+/* Styles header for blog section */
+.blog-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(78, 69, 69);
+    color: whitesmoke;
+    border-radius: 10px 10px 0 0;
+    padding: 2vh;
+}
+
+/* Styles bottom for blog section */
+.blog-text {
+    background-color: rgb(125, 86, 162);
+    display: block;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    height: 50vh;
+    text-align: center;
+    padding: 3vh 0 0 0;
+}
+
+/* Size for text area of blog section */
+.blog-textarea {
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin: 0 0 0 15%;
+    padding: 1vh;
+
+}
+
+/* Styles button for blog section */
+.blog-text button {
+    background-color: rgb(78, 69, 69);
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 2vh;
+    margin: 2vh 0 2vh 0;
+
+}
+
+
+/* Size for prompt section */
+.prompt {
+    border-radius: 10px;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 15vh;
+    padding: 3vh;
+
+}
+
+/* Styles header for prompt section */
+.prompt-header {
+    background-color: rgb(78, 69, 69);
+    color: whitesmoke;
+    border-radius: 10px 10px 0 0;
+    padding: 2vh;
+    text-align: center
+}
+
+/* Styles buttons for prompt section */
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(125, 86, 162);
+    border-radius: 0 0 10px 10px;
+    padding: 4vh
+}
+
+/* Styles buttons for prompt section */
+.buttons button {
+    background-color: rgb(78, 69, 69);
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 2vh;
+}
+
+/* Makes buttons bigger when you hover on them */
+button:hover {
+    transform: scale(1.1);
+    cursor: grabbing;
+
+}
+
+/* Makes navigation routes change colour when you hover on them */
+.header-options h3:hover {
+    color: rgb(158, 75, 75);
+    transform: scale(1.15);
+    cursor: grabbing;
+
+}
+
+/* Makes page mobile responsive */
+@media screen and (max-width: 600px) {
+
+    .sign-up,
+    .prompt {
+        width: 70%;
+        margin-left: 15%;
+
+    }
+
+    img {
+        margin-top: 3vh;
+    }
+
 }

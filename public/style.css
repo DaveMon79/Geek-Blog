@@ -8,6 +8,8 @@
 
 }
 
+
+
 /* Height and backgroubd colour for header */
 header {
     min-height: fit-content;
@@ -171,6 +173,7 @@ img {
     height: 70%;
     margin: 0 0 0 15%;
     padding: 1vh;
+    border-radius: 10px;
 
 }
 
@@ -180,7 +183,7 @@ img {
     color: whitesmoke;
     border-radius: 10px;
     padding: 2vh;
-    margin: 2vh 0 2vh 0;
+    margin: 3vh 0 2vh 0;
 
 }
 

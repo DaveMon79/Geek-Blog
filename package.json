@@ -10,7 +10,9 @@
     "sequelize": "^6.23.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "name": "geek-blog",
   "description": "",

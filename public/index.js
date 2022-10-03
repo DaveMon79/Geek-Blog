@@ -1,4 +1,4 @@
-// Variables for the all the all buttons, input andd navigation routes
+// Variables for all buttons, input and navigation routes
 let home = document.getElementById("home")
 let dashboard = document.getElementById("dashboard")
 let logout = document.getElementById("logout")
@@ -26,51 +26,78 @@ let newBlogButton = document.getElementById("save-blog-button")
 
 // function is fired when user chooses to sign in
 const signInHome = () => {
-console.log("Cunt")
+
 }
 
 // function is fired when user chooses to sign in
 const signUpHome = () => {
-    console.log("Cunt")
+
 }
 
 // Takes user details to make API call to server to log in
-const signIn = () => {
+const signIn = async () => {
     
-    let logInDetails = {
+    let logInDetails = {username: signInUsername.value, email: signInEmail.value, password: signInPassword.value}
 
-        username: signInUsername.value,
-        email: signInEmail.value,
-        password: signInPassword.value
-    }
-    console.log(logInDetails)
     signInUsername.value = ""
     signInEmail.value = ""
     signInPassword.value = ""
 
+    console.log(logInDetails)
+
+//    const postRequest = await fetch(`/api/sign-in`, {
+//         method: 'POST',
+//         body: JSON.stringify(logInDetails),
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+
+//       if (response.ok) {
+//         document.location.replace('/');
+//       } else {
+//         alert('');
+//       }
+    
+
 }
+
 
 // Takes user details to make API call to server to create a new account
 const signUp = () => {
 
-    let signUpDetails = {
-
-        username: signUpUsername.value,
-        email: signUpEmail.value,
-        password: signUpPassword.value
-    }
+    let signUpDetails = {username: signUpUsername.value, email: signUpEmail.value, password: signUpPassword.value}
 
     signUpUsername.value = ""
     signUpEmail.value = ""
     signUpPassword.value = ""
+
+    // const response = await fetch(`/api/sign-in`, {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         username: signInUsername,
+    //         email: signInEmail,
+    //         password: signInPassword
+    //     }),
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //   });
+
+    //   if (response.ok) {
+    //     document.location.replace('/');
+    //   } else {
+    //     alert('');
+    //   }
+
 
 
 }
 
 // takes the new blog and creates a n API post request
 const newBlogFunction = () => {
+    
     let newBlog = newBlogText.value
-    console.log(newBlog)
     newBlogText.value = ""
 }
 

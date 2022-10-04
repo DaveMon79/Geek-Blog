@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', (req,res) => {
-    Blog.findAll({})
+router.get('/', withAuth, (req,res) => {
+    Comment.findAll({})
     .then(comment => res.json(comment))
     .catch(err => {
         console.log(err);
@@ -13,8 +13,8 @@ router.get('/', (req,res) => {
 });
 
 
-router.get('/:id', withAuth, (req, res) => {
-    Blog.findByPk({
+router.get('/:id',withAuth, (req, res) => {
+    Comment.findByPk({
             where: {
                 id: req.params.id
             }
@@ -27,9 +27,10 @@ router.get('/:id', withAuth, (req, res) => {
 });
 
 
+
 router.post('/', withAuth, async (req, res) => {
   try {
-    const comment = await Blog.create({
+    const comment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id
     });
@@ -39,9 +40,11 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+
+
 router.put('/', withAuth, async (req, res) => {
     try {
-      const comment = await Blog.update({
+      const comment = await Comment.update({
         ...req.body,
         user_id: req.session.user_id
       });
@@ -52,9 +55,10 @@ router.put('/', withAuth, async (req, res) => {
   });
 
 
+  
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const comment = await Blog.destroy({
+    const comment = await Comment.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,

@@ -59,16 +59,17 @@ img {
 /* Styles the stored user blogs */
 .user-post {
     width: 90%;
-    margin-top: 2vh;
+    margin-top: 6vh;
     margin-left: 5%;
-    border: black;
+    border:  rgb(78, 69, 69);
 
 
 }
 
 
 /* Font styling for previous blogs */
-.post-header {
+.post-header,
+.comment-header {
     background-color: rgb(78, 69, 69);
     color: whitesmoke;
     display: flex;
@@ -83,9 +84,48 @@ img {
 .post-text {
     color: rgb(78, 69, 69);
     padding: 2vh;
+    border: 2px solid rgb(78, 69, 69);
+}   
+
+
+.lower-post {
+    border-radius: 0 0 10px 10px;
+    border: 2px solid rgb(78, 69, 69);
+}
+
+
+.comment-text {
+    color: rgb(78, 69, 69);
+    padding: 2vh;
     border-radius: 0 0 10px 10px;
     border: 2px solid rgb(78, 69, 69);
 
+}   
+
+.comment {
+    width: 70%;
+    margin-top: 2vh;
+    margin-left: 15%;
+    border:  rgb(78, 69, 69);
+}
+
+.make-new-comment {
+    border:  rgb(78, 69, 69);
+    border-radius: 0 0 10px 10px;
+}
+
+.comment-lower {
+   background-color:  rgb(125, 86, 162);
+   border-radius: 0 0 10px 10px;
+   text-align: center;
+}
+
+.comment-button {
+    margin: 2vh;
+    background-color: rgb(78, 69, 69);
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 1vh;
 }
 
 /* Styling for sign up section */

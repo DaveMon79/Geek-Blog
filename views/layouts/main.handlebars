@@ -6,13 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Geek Blog</title>
 </head>
 
 <body>
+    <header>
+        <div class="header-options">
+            <h3 id="home" href="/">Home</h3>
+            <h3 id="dashboard" href="/api/blogs/:id">Dashboard</h3>
+            {{#if logged_in}}
+            <h3 id="logout" href="/api/sign-out">Logout</h3>
+            {{else}}
+            <h3 id="login" href="/api/sign-in">Login</h3>
+            {{/if}}
+        </div>
+        <div class="header-title">
+            <h1>Geek Blog</h1>
+            <img src="/images/Screenshot 2022-10-01 105810.png" alt="geek" height="100vh" width="100vh">
+        </div>
+    </header>
 
-    <script src="../../public/index.js"></script>
+
+
+    <main>
+        {{{ body }}}
+    </main>
+
+<script src="/js/homepage.js"></script>
+
 </body>
 
 </html>

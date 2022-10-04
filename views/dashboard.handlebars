@@ -1,0 +1,19 @@
+{{#each blogs as |blog|}}
+     <section class="user-post">
+        <div class="post-header">
+            <h3>Tech blog</h3>
+            <h4>Posted by: <span id="blog-name">{{blog.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>
+        </div>
+
+       <div class="post-text">
+            <p id="blog-text">{{blog.blog}}</p>
+        </div>
+        <div class="comment-lower">
+            <button class="comment-button" id="make-comment">Comment</button>
+            <button class="comment-button" id="update-comment">update</button>
+            <button class="comment-button" id="delete-comment">delete</button>
+        </div>
+    </section>
+{{/each}}
+
+    <script src="js/dashboard.js"></script>

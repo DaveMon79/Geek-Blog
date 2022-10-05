@@ -182,6 +182,16 @@ img {
 .blog {
     width: 50%;
     margin: 10vh 0 0 25%;
+ 
+}
+
+/* Input title styling */
+.title {
+    border-radius: 5px;
+    margin-bottom: 2vh;
+    padding: 1vh;
+    width: 50%;
+
 }
 
 /* Styles header for blog section */
@@ -201,7 +211,7 @@ img {
     display: block;
     width: 100%;
     border-radius: 0 0 10px 10px;
-    height: 50vh;
+    height: fit-content;
     text-align: center;
     padding: 3vh 0 0 0;
 }
@@ -210,7 +220,7 @@ img {
 .blog-textarea {
     display: block;
     width: 70%;
-    height: 70%;
+    height: 25vh;
     margin: 0 0 0 15%;
     padding: 1vh;
     border-radius: 10px;
@@ -218,7 +228,8 @@ img {
 }
 
 /* Styles button for blog section */
-.blog-text button {
+.blog-text button,
+.new-blog-button  {
     background-color: rgb(78, 69, 69);
     color: whitesmoke;
     border-radius: 10px;
@@ -226,6 +237,14 @@ img {
     margin: 3vh 0 2vh 0;
 
 }
+
+
+/* Centres button */
+.new-button-div {
+    text-align: center;
+} 
+
+
 
 
 /* Size for prompt section */
@@ -262,6 +281,7 @@ img {
     color: whitesmoke;
     border-radius: 5px;
     padding: 2vh;
+
 }
 
 /* Makes buttons bigger when you hover on them */

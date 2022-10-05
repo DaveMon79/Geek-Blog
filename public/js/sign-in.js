@@ -21,7 +21,7 @@ const signIn = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/')
+      document.location.replace('/api/blogs/dashboard:id')
     } else {
       alert('Failed to sign in')
     }

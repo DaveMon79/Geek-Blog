@@ -6,25 +6,16 @@ const signUp = async () => {
     const username = document.getElementById('sign-up-username').value.trim()
     const email = document.getElementById('sign-up-email').value.trim()
     const password = document.getElementById('sign-up-password').value.trim()
-  
-    username.value = ""
-    email.value = ""
-    password.value = ""
-  
-    const response = await fetch(`/api/sign-in`, {
+   
+    const response = await fetch(`/api/sign-up`, {
       method: 'POST',
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        paassword: password
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: JSON.stringify({ username: username, email: email, paassword: password }),
+      headers: { 'Content-Type': 'application/json'},
     });
   
+    console.log(username, email, password )
     if (response.ok) {
-      document.location.replace('/')
+      document.location.replace('/api/blogs/dashboard:id')
     } else {
       alert('Failed to sign up');
     }

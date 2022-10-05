@@ -8,7 +8,7 @@ const homeFunction = () => {
 // Creates a get request to show all user blogs
 const dashboardFunction = () => {
     console.log("dashboard")
-    document.location.replace('/api/blogs/:id')
+    document.location.replace('/api/blogs/dashboard/:id')
 }
 
 // Displays the sign in page
@@ -18,7 +18,7 @@ const logInFunction = () => {
 
 // Displays the sign out page
 const logOutFunction = () => {
-    console.log("logout", logout)
+    console.log("logout")
     document.location.replace('/api/sign-out')
 }
 

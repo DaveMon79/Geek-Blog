@@ -1,20 +1,18 @@
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+
 
 router.get('/', async (req, res) => {
 
     try {
         const blogs = await Blog.findAll({
-            attributes: ['id', 'username', 'blog', 'date_created', 'user_id'],
+            attributes: ['id', 'username', 'title', 'blog', 'date_created', 'user_id'],
             include: [{ model: Comment }, { model: User }],
         });
 
-
         const blogsSerialized = blogs.map((blog) => blog.get({ plain: true }));
-        const obj = {
-            blogs: blogsSerialized
-        }
+        const obj = { blogs: blogsSerialized }
+
         res.render('saved-blogs', obj);
     } catch (err) {
         res.status(500).json(err);

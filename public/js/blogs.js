@@ -3,6 +3,8 @@ const updateButton = document.getElementById("update")
 const saveButton = document.getElementById("save-blog-button")
 const blog = document.getElementById("blog-input").value
 
+
+
 // Add new blog function 
 const newBlog = async () => {
 

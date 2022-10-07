@@ -28,11 +28,11 @@ router.get('/:id',withAuth, (req, res) => {
 
 
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
     const comment = await Comment.create({
-      ...req.body,
-      user_id: req.session.user_id
+      // ...req.body,
+      // user_id: req.session.user_id
     });
     res.json(comment)
   } catch (err) {
@@ -42,7 +42,7 @@ router.post('/', withAuth, async (req, res) => {
 
 
 
-router.put('/', withAuth, async (req, res) => {
+router.put('/update', withAuth, async (req, res) => {
     try {
       const comment = await Comment.update({
         ...req.body,
@@ -56,7 +56,7 @@ router.put('/', withAuth, async (req, res) => {
 
 
   
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
     const comment = await Comment.destroy({
       where: {

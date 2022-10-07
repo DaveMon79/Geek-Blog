@@ -1,6 +1,6 @@
 const withAuth = (req, res, next) => {
 
-    if (!req.session.loggedIn) {
+    if (!req.session.logged_in) {
       res.redirect('/signin-signup');
     } else {
 
@@ -9,4 +9,4 @@ const withAuth = (req, res, next) => {
   };
   
   module.exports = withAuth;
-  
+

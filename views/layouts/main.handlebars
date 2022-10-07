@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Geek Blog</title>
 </head>
 
 <body>
     <header>
         <div class="header-options">
-            <h3 id="home" href="/">Home</h3>
-            <h3 id="dashboard" href="/api/blogs/:id">Dashboard</h3>
+            <h3><a href="/">Home</a></h3>
+            <h3><a href="/api/blogs/dashboard">Dashboard</a></h3>
             {{#if logged_in}}
-            <h3 id="logout" href="/api/sign-out">Logout</h3>
+            <h3 id="sign-out"href="/api/sign-out">Logout</h3>
+            {{!-- <h3 id="sign-out"><a href="/api/sign-out">Logout</a></h3> --}}
             {{else}}
-            <h3 id="login" href="/api/sign-in">Login</h3>
+            <h3><a href="/sign-in">Login</a></h3>
             {{/if}}
         </div>
         <div class="header-title">
@@ -33,7 +34,7 @@
         {{{ body }}}
     </main>
 
-<script src="/js/homepage.js"></script>
+<script src="/js/sign-out.js"></script>
 
 </body>
 

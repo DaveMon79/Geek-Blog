@@ -6,9 +6,6 @@ const signIn = async (event) => {
   const email = document.getElementById('email').value.trim()
   const password = document.getElementById('passsword').value.trim()
 
-  email.value = ""
-  password.value = ""
-
   if (email && password) {
 
     const response = await fetch('/api/sign-in', {
@@ -19,9 +16,10 @@ const signIn = async (event) => {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+console.log(response)
     if (response.ok) {
-      document.location.replace('/api/blogs/dashboard:id')
+      alert('Sign in successful')
+      document.location.replace('/api/blogs/dashboard')
     } else {
       alert('Failed to sign in')
     }
@@ -29,10 +27,7 @@ const signIn = async (event) => {
 };
 
 
-
-
-
-// Variables for buttons
+// Variable for button
 const signInButton = document.getElementById("sign-in-button").addEventListener("click", signIn)
 
 

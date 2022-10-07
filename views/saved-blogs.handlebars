@@ -1,13 +1,20 @@
 {{#each blogs as |blog|}}
-     <section class="user-post">
-        <div class="post-header">
-            <h3>{{blog.title}}</h3>
-            <h4>Posted by: <span id="blog-name">{{blog.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>
-        </div>
+<section class="user-post">
+    <div class="post-header">
+        <input type="hidden" id="blog_id" name="blog_id" value="{{blog.id}}">
+        <h3><a href="">{{blog.title}}</a></h3>
+        <h4>Posted by: <span id="blog-name">{{blog.user.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>
+    </div>
 
-       <div class="post-text">
-            <p id="blog-text">{{blog.blog}}</p>
-        </div>
-    </section>
+    <div class="post-text">
+        <p id="blog-text">{{blog.blog}}</p>
+    </div>
+
+    {{!-- {{#if logged_in}} --}}
+
+    {{> homescreen-comment }}
+
+    {{!-- {{/if}} --}}
+</section>
+
 {{/each}}
-

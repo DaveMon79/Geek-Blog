@@ -3,7 +3,7 @@ const { User } = require('../../models')
 
 // Create new user function
 router.post('/', async (req, res) => {
-    console.log('hello')
+
     try {
         const user = await User.create(req.body)
 
@@ -11,14 +11,13 @@ router.post('/', async (req, res) => {
             req.session.user_id = user.id
             req.session.logged_in = true
 
-            res.status(200).json(user)
+        res.status(200).json(user)
+
         });
     } catch (err) {
         res.status(400).json(err)
     }
 });
-
-
 
 
 module.exports = router;

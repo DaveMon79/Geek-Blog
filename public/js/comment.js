@@ -1,19 +1,17 @@
-// Variables for update & delete commeent buttons
-const updateButton = document.getElementById("update")
-const deleteButton = document.getElementById("delete")
-const comment = document.getElementById("comment-input").value
+
 
 // Add new comment function 
-const newComment = async () => {
+const newCommentFunction = async () => {
 
-    const response = await fetch(`/api/comment`, {
+const comment = document.getElementById("comment-input").value
+// console.log(req.session.user_id)
+    const response = await fetch(`/api/comment/create`, {
         method: 'POST',
-        body: JSON.stringify({
-            comment
-        }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        body: JSON.stringify({ 
+            comment: comment,
+
+            }),
+        headers: { 'Content-Type': 'application/json'},
     });
 
     if (response.ok) {
@@ -68,5 +66,4 @@ const deleteComment = async () => {
 
 }
 
-updateButton.addEventListener('click', updateComment)
-deleteButton.addEventListener('click', deleteComment)
+const newComment = document.getElementById("save-comment-button").addEventListener('click', newCommentFunction)

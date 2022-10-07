@@ -1,0 +1,22 @@
+
+<section class="user-post">
+    <div class="post-header">
+        <input type="hidden" id="blog_id" name="blog_id" value="{{blogs.id}}">
+        <h4>Posted by: <span id="blog-name">{{blogs.user.username}}</span> on <span id="blog-date">{{blogs.date_created}}</span></h4>
+    </div>
+
+    <div class="post-text">
+        <input id="blog-title" type="text" value="{{blogs.title}}"><br><br>
+        <input id="blog-text" type="text" value="{{blogs.blog}}">
+    </div>
+
+
+     <div class="comment-lower">
+            <button class="comment-button" id="update-comment">update</button>
+            <button class="comment-button" id="delete-comment">delete</button>
+        </div>
+ 
+</section>
+
+
+<script src="/js/blogs.js"></script>

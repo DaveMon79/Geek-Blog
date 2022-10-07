@@ -4,7 +4,7 @@ const signInRoutes = require('./signInRoutes')
 const signOutRoutes = require('./signOutRoutes')
 const signUpRoutes = require('./signUpRoutes')
 const blogRoutes = require('./blogRoutes')
-const commentRoutes = require('./signInRoutes')
+const commentRoutes = require('./commentRoutes')
 
 router.use('/sign-up', signUpRoutes)
 router.use('/sign-in', signInRoutes)

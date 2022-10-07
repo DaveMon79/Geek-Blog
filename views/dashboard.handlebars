@@ -1,24 +1,15 @@
-<div class="new button-div">
-    <button id="new-blog-button" class="new-blog-button">New Blog +</button>
+<div class="new-button-div">
+    <button id="new-blog-button" class="new-blog-button"><a href="/new-blog">New Blog +</a></button>
 </div>
 
 {{#each blogs as |blog|}}
 <section class="user-post">
     <div class="post-header">
-        <h3>{{blog.title}}</h3>
-        <h4>Posted by: <span id="blog-name">{{blog.username}}</span> on <span id="blog-date">{{format_date
-                blog.date_created}}</span></h4>
-    </div>
-
-    <div class="post-text">
-        <p id="blog-text">{{blog.blog}}</p>
-    </div>
-    <div class="comment-lower">
-        <button class="comment-button" id="make-comment">Comment</button>
-        <button class="comment-button" id="update-comment">update</button>
-        <button class="comment-button" id="delete-comment">delete</button>
-    </div>
+        <input type="hidden" id="blog_id" name="blog_id" value="{{blog.id}}">
+        <h3><a href="/api/blogs/edit-blog/{{blog.id}}">{{blog.title}}</a></h3>
+        <h4>Posted by: <span id="blog-name">{{blog.user.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>
+    </div> 
 </section>
-{{/each}}
+ {{/each}}
 
-<script src="js/dashboard.js"></script>
+<script src="/js/blogs.js"></script>

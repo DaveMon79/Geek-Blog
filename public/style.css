@@ -8,7 +8,11 @@
 
 }
 
-
+/* Font colour for a tags */
+a {
+    color: whitesmoke;
+    
+}
 
 /* Height and backgroubd colour for header */
 header {

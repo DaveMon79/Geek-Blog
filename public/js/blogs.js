@@ -1,17 +1,15 @@
-// Variables for update & delete comment buttons
-const updateButton = document.getElementById("update")
-const saveButton = document.getElementById("save-blog-button")
-const blog = document.getElementById("blog-input").value
-
-
 
 // Add new blog function 
 const newBlog = async () => {
 
-    const response = await fetch(`/api/blogs`, {
+    const blogTitle = document.getElementById("blog-title").value
+    const blog = document.getElementById("blog-input").value
+
+    const response = await fetch('/api/blogs/new-blog', {
         method: 'POST',
         body: JSON.stringify({
-            comment
+            title: blogTitle,
+            blog: blog
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -30,16 +28,23 @@ const newBlog = async () => {
 // Update existing blog function 
 const updateBlog = async () => {
 
-    const response = await fetch(`/api/blogs/:id`, {
+    const title = document.getElementById("blog-title").value.trim()
+    const text = document.getElementById("blog-text").value.trim()
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
+    
+    const response = await fetch(`/api/blogs/update-blog/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            comment
+            title: title,
+            blog: text,
+            
         }),
         headers: {
             'Content-Type': 'application/json',
         },
     });
-
+   
     if (response.ok) {
         document.location.replace('/');
     } else {
@@ -51,10 +56,13 @@ const updateBlog = async () => {
 
 // Delete existing blog function 
 const deleteBlog = async () => {
-    const response = await fetch(`/api/blogs/:id`, {
+
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
+    const response = await fetch(`/api/blogs/delete-blog/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
-            comment
+            id: id
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -70,4 +78,7 @@ const deleteBlog = async () => {
 
 }
 
-saveButton.addEventListener('click', newBlog)
+
+const deleteButton = document.getElementById('delete-comment').addEventListener('click', deleteBlog)
+const updateButton = document.getElementById('update-comment').addEventListener('click', updateBlog)
+

@@ -29,15 +29,15 @@ const newBlog = async () => {
 const updateBlog = async () => {
 
     const title = document.getElementById("blog-title").value.trim()
-    const text = document.getElementById("blog-text").value.trim()
+    const blog = document.getElementById("blog-text").value.trim()
     const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-
+   
     
     const response = await fetch(`/api/blogs/update-blog/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title: title,
-            blog: text,
+            blog: blog,
             
         }),
         headers: {
@@ -48,7 +48,7 @@ const updateBlog = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        alert('');
+        alert('Update failed');
     }
 
 }

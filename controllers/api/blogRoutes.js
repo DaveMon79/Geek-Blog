@@ -66,22 +66,25 @@ router.post('/new-blog', withAuth, async (req, res) => {
 
 
 router.put('/update-blog/:id', async (req, res) => {
+    console.log(req.body, "hello")
 
-   const put = { 
-    id: req.params.id,
-    title: req.body.title,
-    blog: req.body.text,
-    date_created: "",
-    user_id: req.session.user_id
-   }
-
-    console.log(put)
     try {
         const blog = await Blog.update({
-            put
-
+            where: {
+                    id: req.params.id,
+              
+            },
+            title: req.body.title,
+            blog: req.body.blog,
+            user_id: req.session.user_id
+            // ...req.body,
+            // id: req.params.id,
+            // title: req.body.title,
+            // blog: req.body.blog,
+            // date_created: "",
+            // user_id: req.session.user_id
         });
-
+        console.log(req.body, "hello")
         res.json(blog);
     } catch (err) {
         console.log(err)

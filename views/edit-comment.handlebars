@@ -1,0 +1,19 @@
+<section class="user-post">
+    <div class="post-header">
+        <input type="hidden" id="user_id" name="user_id" value="{{comments.user.id}}">
+        <input type="hidden" id="blog_id" name="blog_id" value="{{comments.blog_id}}">
+        <h4>Posted by: <span id="blog-name">{{comments.user.username}}</span> on <span id="blog-date">{{comments.date_created}}</span></h4>
+    </div>
+
+    <div class="post-text">
+        <textarea class="input-text" id="comment-text" type="text">{{comments.comment}}</textarea>
+    </div>
+
+     <div class="comment-lower">
+            <button value="{{comments.id}}" class="comment-button" id="update">update</button>
+            <button value="{{comments.id}}" class="comment-button" id="delete">Delete</button>
+        </div>
+ 
+</section>
+
+<script src="/js/comment.js"></script>

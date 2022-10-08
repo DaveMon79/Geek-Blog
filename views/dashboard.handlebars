@@ -4,7 +4,7 @@
 
 {{#each blogs as |blog|}}
 <section class="user-post">
-    <div class="post-header">
+    <div id="dashboard-blogs" class="post-header">
         <input type="hidden" id="blog_id" name="blog_id" value="{{blog.id}}">
         <h3><a href="/api/blogs/edit-blog/{{blog.id}}">{{blog.title}}</a></h3>
         <h4>Posted by: <span id="blog-name">{{blog.user.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>

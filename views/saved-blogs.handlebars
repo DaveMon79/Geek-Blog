@@ -2,7 +2,7 @@
 <section class="user-post">
     <div class="post-header">
         <input type="hidden" id="blog_id" name="blog_id" value="{{blog.id}}">
-        <h3><a href="">{{blog.title}}</a></h3>
+        <h3><a href="/api/comment/{{blog.id}}">{{blog.title}}</a></h3>
         <h4>Posted by: <span id="blog-name">{{blog.user.username}}</span> on <span id="blog-date">{{format_date blog.date_created}}</span></h4>
     </div>
 
@@ -10,11 +10,10 @@
         <p id="blog-text">{{blog.blog}}</p>
     </div>
 
-    {{!-- {{#if logged_in}} --}}
-
     {{> homescreen-comment }}
 
-    {{!-- {{/if}} --}}
 </section>
 
 {{/each}}
+
+<script src="/js/create-comment.js"></script>

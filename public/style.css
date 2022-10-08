@@ -11,6 +11,7 @@
 /* Font colour for a tags */
 a {
     color: whitesmoke;
+    text-decoration: none;
     
 }
 
@@ -297,10 +298,33 @@ button:hover {
 
 /* Makes navigation routes change colour when you hover on them */
 .header-options h3:hover {
-    color: rgb(158, 75, 75);
     transform: scale(1.15);
     cursor: grabbing;
 
+}
+
+/* Edit blog input title box styling */
+.input-title {
+    width: 50%;
+    border-radius: 5px;
+    padding: 1vh;
+    margin-left: 25%;
+
+}
+
+/* Edit blog input text box styling */
+.input-text{
+    width: 90%;
+    height: 10vh;
+    border-radius: 5px;
+    padding: 1vh;
+    margin-left: 5%;
+
+}
+
+/* border radius for dashboard posts */
+#dashboard-blogs {
+    border-radius: 10px;
 }
 
 /* Makes page mobile responsive */

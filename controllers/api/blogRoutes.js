@@ -3,6 +3,44 @@ const { User, Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
+router.get('/new-form/:id', withAuth, async (req, res) => {
+    try {
+        const comment = await Blog.findByPk(req.params.id, {
+        
+            attributes: ['id', 'user_id'],
+            include: [{ model: User, attributes: ['id', 'username'] }],
+
+        });
+
+        const newCom = comment.get({ plain: true });
+        const obj = { blogs: newCom, logged_in: req.session.logged_in }
+        console.log(obj)
+        res.render( "new-comment" , obj);
+      
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+});
+
+
+
+router.post('/new-blog', withAuth, async (req, res) => {
+
+    try {
+        const blog = await Blog.create({
+            ...req.body,
+            user_id: req.session.user_id,
+            username: req.session.username,
+        });
+
+        res.json(blog)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
+
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const blogs = await Blog.findAll({
@@ -21,13 +59,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.render('dashboard', obj);
 
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
 
 
-router.get('/edit-blog/:id', async (req, res) => {
+router.get('/edit-blog/:id', withAuth, async (req, res) => {
     try {
         const blogs = await Blog.findByPk(req.params.id, {
 
@@ -42,7 +79,6 @@ router.get('/edit-blog/:id', async (req, res) => {
         res.render('edit-blog', obj);
 
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -57,7 +93,7 @@ router.post('/new-blog', withAuth, async (req, res) => {
             user_id: req.session.user_id,
             username: req.session.username,
         });
-        console.log(blog)
+
         res.json(blog)
     } catch (err) {
         res.status(500).json(err)
@@ -65,35 +101,25 @@ router.post('/new-blog', withAuth, async (req, res) => {
 });
 
 
-router.put('/update-blog/:id', async (req, res) => {
-    console.log(req.body, "hello")
+router.put('/update-blog/:id', withAuth, async (req, res) => {
 
     try {
         const blog = await Blog.update({
-            where: {
-                    id: req.params.id,
-              
-            },
             title: req.body.title,
             blog: req.body.blog,
             user_id: req.session.user_id
-            // ...req.body,
-            // id: req.params.id,
-            // title: req.body.title,
-            // blog: req.body.blog,
-            // date_created: "",
-            // user_id: req.session.user_id
-        });
-        console.log(req.body, "hello")
+        },
+            { where: { id: req.params.id } });
+
         res.json(blog);
     } catch (err) {
-        console.log(err)
         res.status(500).json(err)
     }
 });
 
 
 router.delete('/delete-blog/:id', withAuth, async (req, res) => {
+
     try {
         const blog = await Blog.destroy({
             where: {

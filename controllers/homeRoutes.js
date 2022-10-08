@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Blog, User } = require('../models');
 
-
+// Returns all blogs and renders home page
 router.get('/', async (req, res) => {
 
     try {
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
         const blogsSerialized = blogs.map((blog) => blog.get({ plain: true }));
         const obj = { blogs: blogsSerialized, logged_in: req.session.logged_in }
-        console.log(obj)
+
         res.render('saved-blogs', obj);
   
     } catch (err) {
@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 
+// Renders new blog page
 router.get('/new-blog' , async (req, res) => {
     try {
 
@@ -30,6 +31,7 @@ router.get('/new-blog' , async (req, res) => {
     }
 });
 
+// Renders signup or signin prompt
 router.get('/signin-signup', async (req, res) => {
     try {
         res.render('signprompt')

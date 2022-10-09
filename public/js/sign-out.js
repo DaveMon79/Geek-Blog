@@ -1,3 +1,5 @@
+
+// Signs user out function
 const signOut = async ()  => {
     
     const response = await fetch('/api/sign-out', {

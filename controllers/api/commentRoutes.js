@@ -28,6 +28,7 @@ router.get('/edit/:id', async (req, res) => {
   }
 });
 
+
 // Returns all comments on selected blog
 router.get('/:id', async (req, res) => {
 
@@ -71,7 +72,7 @@ router.post('/create/:id', async (req, res) => {
       user_id: req.body.user_id,
 
     });
-
+    console.log("hello")
     res.json(comment)
   } catch (err) {
     console.log(err)

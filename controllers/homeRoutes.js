@@ -40,6 +40,7 @@ router.get('/signin-signup', async (req, res) => {
     }
 });
 
+// Renders the sign in page
 router.get('/sign-in', async (req, res) => {
     try {
         res.render('signin')
@@ -48,6 +49,7 @@ router.get('/sign-in', async (req, res) => {
     }
 });
 
+// Renders the sign up page
 router.get('/sign-up', async (req, res) => {
     try {
         res.render('signup')
@@ -55,15 +57,6 @@ router.get('/sign-up', async (req, res) => {
         res.status(500).json(err)
     }
 });
-
-router.get('/comment', async (req, res) => {
-    try {
-        res.render('new-comment')
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
-
 
 
 

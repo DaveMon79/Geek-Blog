@@ -6,17 +6,17 @@ const withAuth = require('../../utils/auth');
 router.get('/new-form/:id', withAuth, async (req, res) => {
     try {
         const comment = await Blog.findByPk(req.params.id, {
-        
+
             attributes: ['id', 'user_id'],
-            include: [{ model: User, attributes: ['id', 'username'] }],
+            include: [{ model: User, attributes: ['username'] }],
 
         });
 
         const newCom = comment.get({ plain: true });
         const obj = { blogs: newCom, logged_in: req.session.logged_in }
         console.log(obj)
-        res.render( "new-comment" , obj);
-      
+        res.render("new-comment", obj);
+
     } catch (err) {
         console.log(err)
         res.status(500).json(err);

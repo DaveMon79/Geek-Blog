@@ -1,4 +1,4 @@
-
+// Signs user out
 const router = require('express').Router();
 
 

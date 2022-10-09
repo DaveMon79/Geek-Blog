@@ -10,10 +10,12 @@
         <p id="blog-text">{{blog.blog}}</p>
     </div>
 
-    {{> homescreen-comment }}
+    <div class="comment-lower">
+        <button class="comment-button" id="make-comment" >Comment</button>
+    </div>
 
 </section>
-
 {{/each}}
 
 <script src="/js/create-comment.js"></script>
+

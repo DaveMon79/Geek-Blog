@@ -1,6 +1,7 @@
 
-// Add new comment function 
-const form = async () => {
+// Returns new comment handlebar with blog and user id's hidden
+const form = async (event) => {
+    event.preventDefault();
 
     const id = document.getElementById("blog_id").value
    console.log("hello", id)
@@ -10,19 +11,18 @@ const form = async () => {
     });
 
     if (response.ok) {
-  
+ 
+        document.location.replace(`/api/blogs/new-form/${id}`)
     } else {
         alert('Error');
     }
 
 
-
 }
+
+
+
 
 const commentButton = document.getElementById("make-comment").addEventListener("click", form)
 
 
-// const saveButton = document.getElementById("save-comment-button").addEventListener("click", createNewComment)
-// const comment = document.getElementById("save-comment-button").value
-// const userId = document.getElementById("user_id").value
-// const blogId = document.getElementById("blog_id").value

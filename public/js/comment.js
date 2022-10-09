@@ -1,25 +1,28 @@
 
-// Add new comment function 
-const newCommentFunction = async () => {
+// // Add new comment function 
+// const newCommentFunction = async () => {
 
-const comment = document.getElementById("comment-input").value
+// const comment = document.getElementById("comment-input").value
+// const userId = document.getElementById("user_id").value
+// const blogId = document.getElementById("blog_id").value
 
-    const response = await fetch(`/api/comment/create/:id`, {
-        method: 'POST',
-        body: JSON.stringify({ 
-            comment: comment,
+//     const response = await fetch(`/api/comment/create/${blogId}`, {
+//         method: 'POST',
+//         body: JSON.stringify({ 
+//             comment: comment,
+//             user_id: userId
+//             }),
+//         headers: { 'Content-Type': 'application/json'},
 
-            }),
-        headers: { 'Content-Type': 'application/json'},
-    });
+//     });
+//     console.log("hello",comment, userId, blogId  )
+//     if (response.ok) {
+//         document.location.replace('/');
+//     } else {
+//         alert('');
+//     }
 
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert('');
-    }
-
-}
+// }
 
 
 
@@ -80,4 +83,4 @@ const deleteComment = async () => {
 
 const deleteButton = document.getElementById("delete").addEventListener('click', deleteComment)
 const updateButton = document.getElementById("update").addEventListener('click', updateComment)
-const newComment = document.getElementById("save-comment-button").addEventListener('click', newCommentFunction)
+// const newComment = document.getElementById("save-comment-button").addEventListener('click', newCommentFunction)

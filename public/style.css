@@ -63,9 +63,9 @@ img {
 
 /* Styles the stored user blogs */
 .user-post {
-    width: 90%;
+    width: 80%;
     margin-top: 6vh;
-    margin-left: 5%;
+    margin-left: 10%;
     border:  rgb(78, 69, 69);
 
 
@@ -93,38 +93,43 @@ img {
 }   
 
 
+/* Styles the text area for lower section */
 .lower-post {
     border-radius: 0 0 10px 10px;
     border: 2px solid rgb(78, 69, 69);
 }
 
-
+/* Styles the texyt area for saved comments */
 .comment-text {
     color: rgb(78, 69, 69);
     padding: 2vh;
-    border-radius: 0 0 10px 10px;
     border: 2px solid rgb(78, 69, 69);
 
 }   
 
+/* Sets size and centres comments secction */
 .comment {
     width: 70%;
     margin-top: 2vh;
     margin-left: 15%;
     border:  rgb(78, 69, 69);
+    margin-top: 5vh;
 }
 
+/* Styles the botton of new comment section */
 .make-new-comment {
     border:  rgb(78, 69, 69);
     border-radius: 0 0 10px 10px;
 }
 
+/* Background color for comment lower section and centres buttons */
 .comment-lower {
    background-color:  rgb(125, 86, 162);
    border-radius: 0 0 10px 10px;
    text-align: center;
 }
 
+/* Styles comment button */
 .comment-button {
     margin: 2vh;
     background-color: rgb(78, 69, 69);

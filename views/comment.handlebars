@@ -1,17 +1,18 @@
 {{#each comments }}
- <section class="comment">
-        <div class="comment-header">
-             <input type="hidden" id="comment_id" name="comment_id" value="{{blog_id}}">
-            <h3>Comment by: <span value="{{user.id}}" id="comment-name">{{user.username}}</span> on <span id="comment-date">{{date_created}}</span></h3>
-        </div>
+<section class="comment">
+    <div class="comment-header">
+        <input type="hidden" id="comment_id" name="comment_id" value="{{blog_id}}">
+        <h3>Comment by: <span value="{{user.id}}" id="comment-name">{{user.username}}</span> on <span id="comment-date">{{format_date date_created}}</span></h3>
+    </div>
 
-        <div class="comment-text">
-            <p id="comment-text">{{comment}}
-            </p>
-        </div>
-        <div class="comment-lower">
-            <button value="{{id}}" class="comment-button" id="update"><a href="/api/comment/edit/{{id}}">Edit</a></button>
-        </div>
-    </section>
+    <div class="comment-text">
+        <p id="comment-text">{{comment}}
+        </p>
+    </div>
+    <div class="comment-lower">
+        <button value="{{id}}" class="comment-button" id="update"><a href="/api/comment/edit/{{id}}">Edit</a></button>
+    </div>
+</section>
 {{/each}}
-        <script src="/js/comment.js"></script>
+
+<script src="/js/comment.js"></script>

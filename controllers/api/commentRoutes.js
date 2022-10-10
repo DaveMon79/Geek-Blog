@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 
 // Returns edit comment handlebar
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
 
   try {
     const comments = await Comment.findByPk(req.params.id, {
@@ -30,7 +30,7 @@ router.get('/edit/:id', async (req, res) => {
 
 
 // Returns all comments on selected blog
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
 
   try {
     const comments = await Comment.findAll({
@@ -64,7 +64,7 @@ router.get('/:id', async (req, res) => {
 
 
 // Creates a new comment on selected blog
-router.post('/create/:id', async (req, res) => {
+router.post('/create/:id', withAuth, async (req, res) => {
   try {
     const comment = await Comment.create({
       comment: req.body.comment,

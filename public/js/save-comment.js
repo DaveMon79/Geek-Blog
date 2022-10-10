@@ -1,5 +1,6 @@
 // Add new comment function 
-const newCommentFunction = async () => {
+const newCommentFunction = async (event) => {
+    //  event.target
 
     const comment = document.getElementById("comment-input").value
     const userId = document.getElementById("user_id").value
@@ -23,3 +24,4 @@ const newCommentFunction = async () => {
 }
 
 const newComment = document.getElementById("save-comment-button").addEventListener('click', newCommentFunction)
+

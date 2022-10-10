@@ -1,6 +1,6 @@
 
 // Takes user details to make API call to server to create a new account
-const signUp = async () => {
+const signUp = async (event) => {
     event.preventDefault();
   
     const username = document.getElementById('sign-up-username').value.trim()

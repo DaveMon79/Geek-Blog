@@ -16,7 +16,7 @@ const signIn = async (event) => {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-console.log(response)
+
     if (response.ok) {
       alert('Sign in successful')
       document.location.replace('/api/blogs/dashboard')

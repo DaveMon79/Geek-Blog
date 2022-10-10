@@ -2,12 +2,12 @@
 <section class="user-post">
     <div class="post-header">
         <input type="hidden" id="blog_id" name="blog_id" value="{{blogs.id}}">
-        <h4>Posted by: <span id="blog-name">{{blogs.user.username}}</span> on <span id="blog-date">{{blogs.date_created}}</span></h4>
+        <h4>Posted by: <span id="blog-name">{{blogs.user.username}}</span> on <span id="blog-date">{{format_date blogs.date_created}}</span></h4>
     </div>
 
     <div class="post-text">
         <input class="input-title" id="blog-title" type="text" value="{{blogs.title}}"><br><br>
-        <textarea class="input-text" id="blog-text" type="text" value="{{blogs.blog}}"></textarea>
+        <textarea class="input-text" id="blog-text" type="text" value="{{blogs.blog}}">{{blogs.blog}}</textarea>
     </div>
 
 

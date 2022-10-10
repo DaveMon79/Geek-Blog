@@ -97,7 +97,7 @@ To use this appilcation type "npm run seed" in to terminal. This will create the
 
 # Screenshot
 
-![image](https://user-images.githubusercontent.com/103275458/192984175-4e47077b-e58b-42c2-b541-b8ab04ecc5de.png)
+![image](https://user-images.githubusercontent.com/103275458/194843681-94215f25-b2bc-4ead-95fa-96cf4a0eb2b8.png)
 
 # Links
 
@@ -107,7 +107,7 @@ To use this appilcation type "npm run seed" in to terminal. This will create the
 
 [Heroku Live URL]()
 
-[Video link displaying functionality]() 
+<!-- [Video link displaying functionality]()  -->
 
   
 # Contributing

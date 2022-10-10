@@ -105,7 +105,7 @@ To use this appilcation type "npm run seed" in to terminal. This will create the
 
 [Github Live URL](https://davemon79.github.io/Geek-Blog/)
 
-[Heroku Live URL]()
+[Heroku Live URL](https://immense-dusk-95671.herokuapp.com/)
 
 <!-- [Video link displaying functionality]()  -->
 
